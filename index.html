@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heaven - Hotel & Resort Booking</title>
+    <link rel="stylesheet" href="./global.css">
+    <link rel="stylesheet" href="./All CSS/home.css">
+    <link rel="icon" href="../images/only-logo.png">
+
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- for jost font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- for playfair font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="scroll-watcher"></div>
+    <div class="trailer-our-hotel">
+        <i class="fa-solid fa-xmark" onclick="closeTrailer()"></i>
+        <video src="./videos/hotel-video-trailer.mp4" controls></video>
+    </div>
+    <div class="view-big-image">
+        <i class="fa-solid fa-xmark" onclick="closeTrailer()"></i>
+        <img class="big-image">
+    </div>
+    <div id="shade"></div>
+    <div id="wishlist-add-msg">
+        <div class="left-design"></div>
+        <i class="fa-regular fa-face-smile-beam"></i>
+        <p>Add in Wishlist!</p>
+    </div>
+    <div id="wishlist-remove-msg">
+        <div class="left-design"></div>
+        <i class="fa-regular fa-face-frown"></i>
+        <p>Remove From Wishlist!</p>
+    </div>
+    <div id="logout-msg">
+        <p>Are You Sure?</p>
+        <div id="btns">
+            <button id="no-btn">No</button>
+            <button id="yes-btn">Yes</button>
+        </div>
+    </div>
+
+    <div id="crousel">
+        <div id="top">
+            <div class="top-content">
+                <div id="left">
+                    <div class="phone-and-location">
+                        <p>Call: </p><span>+9876543210</span>
+                        <p>Find Us: </p><span>Pakistan Karachi</span>
+                    </div>
+                    <div class="icon-links">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="user">
+                        <img src="./images/no-img2.jpg" alt="profile-pic" id="profile">
+                        <p id="username"></p>
+                    </div>
+                    <div class="link">
+                        <a href="/All HTML/login-page.html" id="login-link">Login</a>
+                        <a href="#" id="logout-link">Logout </a>
+                        <a href="/All HTML/signup-page.html" id="signup-link">Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="left">
+                <img src="./images/logo.png" alt="">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a onclick="goToAbout()">About</a></li>
+                    <li><a onclick="goToServices()">Services</a></li>
+                    <li><a onclick="goToRooms()">Rooms</a></li>
+                    <li><a onclick="goToTeam()">Team</a></li>
+                    <li><a onclick="goToTestimonials()">Testimonials</a></li>
+                    <li><a onclick="goToContact()">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div id="icons">
+                    <div id="sideNav-icon">
+                        <i class="fa-solid fa-bars-staggered" onclick="openSideNav()"></i>
+                    </div>
+                    <div class="whishlist" onclick="openWishlist()">
+                        <i class="fa-solid fa-bag-shopping" onclick="openWishlist()"></i>
+                        <p id="whishlist-count">0</p>
+                    </div>
+                </div>
+                <button onclick="goToRooms()">Rooms</button>
+            </div>
+        </nav>
+        <div id="sideNavbar">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a onclick="goToAbout()">About</a></li>
+                <li><a onclick="goToServices()">Services</a></li>
+                <li><a onclick="goToRooms()">Rooms</a></li>
+                <li><a onclick="goToTeam()">Team</a></li>
+                <li><a onclick="goToTestimonials()">Testimonials</a></li>
+                <li><a onclick="goToContact()">Contacts</a></li>
+            </ul>
+            <i class="fa-solid fa-xmark" onclick="closeSideNav()"></i>
+        </div>
+        <div id="wishlist">
+            <div class="top-content">
+                <h2 id="wishlist-empty-msg">Your wishlist</h2>
+                <i class="fa-solid fa-xmark" onclick="closeWishlist()"></i>
+            </div>
+            <div class="main-content-rooms">
+
+            </div>
+            <button class="clear-wishlist">Clear wishlist</button>
+        </div>
+        <div class="slide" id="first-slide">
+            <div class="crousel-content">
+                <p>Enjoy your time in Our Hotel with pleasure</p>
+                <h1>welcome to the heaven premium hotel</h1>
+                <div class="lines-with-logo">
+                    <div class="left-line"></div>
+                    <img src="./images/only-logo.png" alt="logo-image">
+                    <div class="right-line"></div>
+                </div>
+                <div class="for-btn">
+                    <div class="border">
+                        <button onmouseover="sliderBtnHover()" onmouseleave="sliderBtnLeave()"
+                            onclick="goToAbout()">Start Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="second-slide">
+            <div class="crousel-content">
+                <p>Enjoy your time in Our Hotel with pleasure</p>
+                <h1>a new vision of comfort</h1>
+                <div class="lines-with-logo">
+                    <div class="left-line"></div>
+                    <img src="./images/only-logo.png" alt="logo-image">
+                    <div class="right-line"></div>
+                </div>
+                <div class="for-btn">
+                    <div class="border">
+                        <button onmouseover="sliderBtnHover()" onmouseleave="sliderBtnLeave()"
+                            onclick="goToAbout()">Start Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="third-slide">
+            <div class="crousel-content">
+                <p>Enjoy your time in Our Hotel with pleasure</p>
+                <h1>explore our premium rooms</h1>
+                <div class="lines-with-logo">
+                    <div class="left-line"></div>
+                    <img src="./images/only-logo.png" alt="logo-image">
+                    <div class="right-line"></div>
+                </div>
+                <div class="for-btn">
+                    <div class="border">
+                        <button onmouseover="sliderBtnHover()" onmouseleave="sliderBtnLeave()"
+                            onclick="goToAbout()">Start Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- for right side -->
+        <div class="right-btn-back">
+            <div class="slide-btn-back-top-right">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ffffff" fill-opacity="1" d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="slide-btn-back-mid-right"></div>
+            <div class="slide-btn-back-bottom-right">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ffffff" d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <!-- for left side -->
+        <div class="left-btn-back">
+            <div class="slide-btn-back-top-left">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ffffff" fill-opacity="1" d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="slide-btn-back-mid-left"></div>
+            <div class="slide-btn-back-bottom-left">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#ffffff" d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <!-- for bottom side -->
+        <div class="bottom-area">
+            <div class="bottom-back">
+                <div class="slide-bottom-left">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffffff" fill-opacity="1" d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="slide-bottom-mid">
+                    <div class="slider-dots">
+                    </div>
+                </div>
+                <div class="slide-bottom-right">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#ffffff" d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <button id="next-btn" onclick="goNext()"><i class="fa-solid fa-caret-right"></i></button>
+        <button id="prev-btn" onclick="goPrev()"><i class="fa-solid fa-caret-left"></i></button>
+        <div class="animated-dot">
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <div id="about-section">
+        <div id="content" data-aos="fade-right" data-aos-duration="1500">
+            <div class="line"></div>
+            <span>Enjoy your time in our Hotel</span>
+            <h1>About our Hotel</h1>
+            <p data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
+                Welcome to The Heaven Hotel-Resort, an oasis of luxury.Our resort offers a perfect blend of elegance and
+                comfort, featuring beautifully appointed rooms and suites designed to provide a serene escape. Wake up
+                to
+                breathtaking, and indulge in gourmet dining at our restaurants offering a variety of culinary delights.
+                <br><br>
+                Beyond accommodation and dining, The Heaven Hotel-Resort offers a wealth of experiences to suit every
+                guest. Pamper yourself with rejuvenating spa treatments, unwind by our sparkling poolside, or engage in
+                activities to make the most of your stay. Whether you're planning a romantic getaway, a family vacation,
+                or a corporate retreat, our resort ensures a memorable stay with impeccable service and a peaceful
+                ambiance.
+            </p>
+            <button onclick="goToServices()">view our services</button>
+        </div>
+        <div id="images" data-aos="fade-left" data-aos-duration="1500">
+            <img src="./images/about-section-main-img.jpg" alt="">
+            <div class="top-img" data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
+                <img src="./images/about-section-top-img.jpg" alt="">
+            </div>
+            <div class="bottom-img" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
+                <img src="./images/about-section-bottom-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="special-rooms-section">
+        <div class="content">
+            <p>special selection</p>
+            <h1>popular rooms and suites</h1>
+            <div class="lines-with-logo">
+                <div class="start-line"></div>
+                <img src="./images/only-logo.png" alt="logo-image">
+                <div class="end-line"></div>
+            </div>
+            <div class="for-btn">
+                <button onclick="window.location.href='../All HTML/all-rooms.html'">view all rooms</button>
+            </div>
+        </div>
+        <div id="rooms-section">
+            <div class="room-slider">
+            </div>
+            <button class="next-btn"><i class="fa-solid fa-caret-right"></i></button>
+            <button class="prev-btn"><i class="fa-solid fa-caret-left"></i></button>
+        </div>
+    </div>
+
+    <div id="extra-services-section">
+        <div class="content" data-aos="fade-down" data-aos-duration="1000">
+            <div class="line">_____</div>
+            <p>Enjoy your time in our Hotel with pleasure.</p>
+            <h1>hotels extra services</h1>
+            <img src="./images/only-logo.png" alt="logo-img">
+        </div>
+        <!-- for first card -->
+        <div class="flip-boxes">
+            <div class="flip-box" data-aos="flip-left" data-aos-duration="1500">
+                <div class="front"
+                    style="background-image: url(./images/spa-and-wellness-room-img.jpg); object-fit: cover;">
+                    <div class="front-content">
+                        <div class="line"></div>
+                        <h2>spa and wellness</h2>
+                        <p>start relax better</p>
+                        <div class="logo-and-lines">
+                            <div class="lines"></div>
+                            <img src="./images/only-logo.png" alt="logo-img">
+                            <div class="lines"></div>
+                        </div>
+                        <p id="num">01.</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="back-content">
+                        <i class="fa-solid fa-spa"></i>
+                        <p>Relax and feel refreshed with our soothing spa treatments and modern wellness facilities.</p>
+                        <p class="dots">...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- for second card -->
+            <div class="flip-box" data-aos="flip-left" data-aos-duration="1500">
+                <div class="front" style="background-image: url(./images/swimming-pool-img.jpg);">
+                    <div class="front-content">
+                        <div class="line"></div>
+                        <h2>indoor swimming pool</h2>
+                        <p>quality is the heart</p>
+                        <div class="logo-and-lines">
+                            <div class="lines"></div>
+                            <img src="./images/only-logo.png" alt="logo-img">
+                            <div class="lines"></div>
+                        </div>
+                        <p id="num">02.</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="back-content">
+                        <i class="fa-solid fa-water-ladder"></i>
+                        <p>
+                            Enjoy a refreshing swim in our beautiful pool, perfect for relaxation and fun.
+                        </p>
+                        <p class="dots">...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- for third card -->
+            <div class="flip-box" data-aos="flip-left" data-aos-duration="1500">
+                <div class="front" style="background-image: url('./images//resturent-img.jpg')">
+                    <div class="front-content">
+                        <div class="line"></div>
+                        <h2>the restaurent center</h2>
+                        <p>hot & ready to searv</p>
+                        <div class="logo-and-lines">
+                            <div class="lines"></div>
+                            <img src="./images/only-logo.png" alt="logo-img">
+                            <div class="lines"></div>
+                        </div>
+                        <p id="num">03.</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="back-content">
+                        <i class="bi bi-cup-hot"></i>
+                        <p>
+                            Savor delicious meals in our elegant restaurant, offering a variety of dishes to delight
+                            your taste buds.
+                        </p>
+                        <p class="dots">...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="goToContact()">get in touch with us</button>
+    </div>
+
+    <!-- more about section -->
+    <div id="more-about-section">
+        <div class="banner-img"></div>
+        <div class="top-content">
+            <div class="left" data-aos="fade-down" data-aos-duration="1000">
+                <div class="line"></div>
+                <p>OTHER AMINITES AND SERVICES</p>
+                <h1>ENJOY COMPLETE & BEST QUALITY COOPERATION</h1>
+            </div>
+            <div class="right" data-aos="fade-up" data-aos-duration="1000">
+                <img src="./images/booking.com-logo.png" alt="booking.com-logo">
+                <img src="./images/visa-logo.png" alt="visa-logo">
+                <img src="./images/wordpress-logo.png" alt="wordpress-logo">
+                <img src="./images/master-card logo.png" alt="master-card-logo">
+            </div>
+        </div>
+        <!-- content -->
+        <div class="more-about-content">
+            <div class="content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="border-line">
+                    <h4>MORE ABOUT US</h4>
+                    <h2>Luxary Premium Hotel In Pakistan</h2>
+                    <p id="dropcap" class="para">
+                        The Heaven Hotel and Resort in Pakistan blends luxury and charm seamlessly. Its architecture and
+                        landscaped gardens create a serene retreat, welcoming guests with elegance. Accommodations are
+                        equipped with modern amenities and offer scenic views, ensuring comfort and relaxation
+                        throughout
+                        your stay.
+                    </p>
+                    <p class="para">
+                        Indulge in diverse culinary experiences at The Heaven Hotel and Resort's multiple dining venues.
+                        From gourmet international cuisine to casual cafes, each dining experience is crafted to delight
+                        your palate. After dining, unwind at the spa or fitness center, where a range of wellness
+                        options
+                        await, designed to rejuvenate both body and mind.
+                    </p>
+                    <P class="para">
+                        Experience exceptional service at The Heaven Hotel and Resort, where every detail is
+                        meticulously
+                        handled by a dedicated staff. Whether you're visiting for leisure or business, the resort's
+                        commitment to excellence ensures a memorable stay. Discover a haven of luxury and tranquility at
+                        The
+                        Heaven Hotel and Resort, where hospitality meets perfection.
+                    </P>
+                    <!-- Profile -->
+                    <div class="men-detail">
+                        <div class="profile">
+                            <img src="./images/1st-team-member.jpg" alt="">
+                            <div class="profile-name">
+                                <h2>Muzammil Sherazi</h2>
+                                <p>HOTEL MANAGER</p>
+                            </div>
+                        </div>
+                        <div class="profile-signature">
+                            <img src="./images/signature.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner-video" data-aos="fade-left" data-aos-duration="1000">
+                <div class="banner-video-blur">
+                    <button onclick="openTrailer()"><i class="fa-solid fa-play"></i></button>
+                    <h2>Video About Our Hotels</h2>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--cards-wrap-->
+    <div id="moving-cards-section">
+        <div class="cards-wrap" style="--time: 8s; --totalItems: 8;">
+            <!--card-item-->
+            <div class="card-item" style="--item: 1;">
+                <i class="bi bi-alarm"></i>
+                <h4>Pick Up & Drop</h4>
+                <p>
+                    Enjoy convenient pick-up and drop-off services for a stress-free arrival and departure.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">01.</span>
+            </div>
+            <!--card-item end-->
+            <!--card-item-->
+            <div class="card-item" style="--item: 2;">
+                <i class="bi bi-p-circle"></i>
+                <h4>Parking Space</h4>
+                <p>
+                    Take advantage of our spacious and secure parking area for your convenience.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">02.</span>
+            </div>
+            <!--card-item end-->
+            <!--card-item-->
+            <div class="card-item" style="--item: 3;">
+                <i class="bi bi-trash2-fill"></i>
+                <h4>Room Service</h4>
+                <p>
+                    Enjoy delicious meals and snacks delivered right to your room, any time you need.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">03.</span>
+            </div>
+            <!--card-item end-->
+            <!--card-item-->
+            <div class="card-item" style="--item: 4;">
+                <i class="bi bi-wifi"></i>
+                <h4>Free WiFi</h4>
+                <p>
+                    Stay connected with our fast and free Wi-Fi available throughout the resort.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">04.</span>
+            </div>
+            <!--card-item end-->
+            <!--card-item-->
+            <div class="card-item" style="--item: 5;">
+                <i class="bi bi-cup-fill"></i>
+                <h4>Free Breakfast</h4>
+                <p>
+                    Start your day with a delicious complimentary breakfast served fresh every morning.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">05.</span>
+            </div>
+            <!--card-item end-->
+            <!--card-item-->
+            <div class="card-item" style="--item: 6;">
+                <i class="bi bi-geo-alt-fill"></i>
+                <h4>Travel accomodation</h4>
+                <p>
+                    Enjoy comfortable and convenient travel arrangements, ensuring a smooth and enjoyable stay.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">06.</span>
+            </div>
+            <!--card-item end-->
+            <!--card-item-->
+            <div class="card-item" style="--item: 7;">
+                <i class="bi bi-airplane-fill"></i>
+                <h4>Airport Shuttle</h4>
+                <p>
+                    Benefit from our convenient airport shuttle service for easy and stress-free transfers.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">07.</span>
+            </div>
+            <!--card-item end-->
+            <!--card-item-->
+            <div class="card-item" style="--item: 8;">
+                <i class="bi bi-person-wheelchair"></i>
+                <h4>Wheelchair Friendly</h4>
+                <p>
+                    Experience a comfortable stay with our fully accessible, wheelchair-friendly facilities.
+                </p>
+                <div class="tbc-separator"></div>
+                <span class="aci_num">08.</span>
+            </div>
+            <!--card-item end-->
+        </div>
+    </div>
+
+    <div id="rooms-and-suites-section">
+        <div class="room-top-content" data-aos="fade-down" data-aos-duration="1000">
+            <div class="line"></div>
+            <p>Enjoy your time in our Hotel with pleasure.</p>
+            <h1>Rooms And Suites</h1>
+            <img src="./images/only-logo.png" alt="">
+        </div>
+        <div class="rooms-and-suites">
+
+        </div>
+        <button onclick="window.location.href='./All HTML/all-rooms.html'">view all</button>
+    </div>
+
+    <div id="counting-section">
+        <div class="counter">
+            <div class="new-visitors for-all-same">
+                <span class="num" count-value="221">000</span>
+                <h4>new visitors every week</h4>
+                <div class="dots">...</div>
+            </div>
+            <div class="happy-customers for-all-same">
+                <span class="num" count-value="250">000</span>
+                <h4>happy customers every years</h4>
+                <div class="dots">...</div>
+            </div>
+            <div class="awards for-all-same">
+                <span class="num" count-value="146">000</span>
+                <h4>won awards</h4>
+                <div class="dots">...</div>
+            </div>
+            <div class="weekly-deliveries for-all-same">
+                <span class="num" count-value="150">000</span>
+                <h4>weekly deliveries</h4>
+                <div class="dots">...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- team section -->
+    <div id="meat-team-section">
+        <div class="top-content" data-aos="fade-down" data-aos-duration="1000">
+            <div class="line"></div>
+            <p>Enjoy your time in our Hotel with pleasure.</p>
+            <h1>Meet Our Team</h1>
+            <img src="./images/only-logo.png" alt="">
+        </div>
+        <div class="team-members">
+            <div class="first-member" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="image" onmouseover="showFollowDiv(this)" onmouseleave="hideFollowDiv(this)">
+                    <img src="./images/1st-team-member.jpg" alt="member-image">
+                    <div class="social-media">
+                        <h4>Follow</h4>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <h2>Muzammil sherazi</h2>
+                    <h5>general Hotel manager</h5>
+                    <p>
+                        Muzammil Sherazi, our General Manager at The Heaven Hotel-Resort, is a seasoned professional
+                        dedicated
+                        to delivering exceptional guest experiences.
+                    </p>
+                    <div class="dots-div">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="second-member" data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500">
+                <div class="image" onmouseover="showFollowDiv(this)" onmouseleave="hideFollowDiv(this)">
+                    <img src="./images/2nd-team-member.jpg" alt="member-image">
+                    <div class="social-media">
+                        <h4>Follow</h4>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <h2>Tahir Javed</h2>
+                    <h5>guest service department</h5>
+                    <p>
+                        Tahir Javed leads our Guest Service Department at The Heaven Hotel-Resort, ensuring each guest
+                        enjoys a warm and welcoming experience.
+                    </p>
+                    <div class="dots-div">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="third-member" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1500">
+                <div class="image" onmouseover="showFollowDiv(this)" onmouseleave="hideFollowDiv(this)">
+                    <img src="./images/3rd-team-member.jpg" alt="member-image">
+                    <div class="social-media">
+                        <h4>Follow</h4>
+                        <div class="icons">
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <h2>Rabia Fatima</h2>
+                    <h5>Reservation hotel manager</h5>
+                    <p>
+
+                        Rabia Fatima, our Reservations Hotel Manager at The Heaven Hotel-Resort, ensures a smooth and
+                        personalized booking experience for every guest.
+                    </p>
+                    <div class="dots-div">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- clients reviews section -->
+    <div id="clients-review-section">
+        <!-- Header Section -->
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
+            <div class="section-title">
+                <h4>What said about us</h4>
+                <h2>Testimonials & Clients</h2>
+                <div class="section-separator"><span><img src="./images/only-logo.png" alt=""></span></div>
+            </div>
+
+        </div>
+        <!-- Testinomial item section -->
+        <div class="Parent_testimonial">
+            <!--Chid1-->
+
+            <div class="testi-item" data-aos="fade-up" data-aos-duration="5000">
+                <div class="img">
+                    <img src="./images/2.jpg" alt>
+                </div>
+                <div class="testimonials-content">
+                    <h3>Andy Dimasky</h3>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <p>
+                        "Stunning resort experience! From the moment we arrived, we were greeted with warm smiles
+                        and exceptional service. The rooms were spacious, clean, and beautifully decorated with
+                        a modern touch. The resort grounds are immaculate, featuring lush gardens and
+                        breathtaking ocean views. "
+                    </p>
+                    <div class="dots">......</div>
+                    <span class="number">01.</span>
+                    <i class="bi bi-quote" id="top-quote"></i>
+                    <i class="bi bi-quote" id="bottom-quote"></i>
+                </div>
+
+            </div>
+            <!--child end-->
+            <!--Chid2-->
+            <div class="testi-item" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="img">
+                    <img src="./images/3.jpg" alt>
+                </div>
+                <div class="testimonials-content">
+                    <h3>Jannet Dellov</h3>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <p>
+                        "A true paradise! This resort exceeded our expectations in every way possible. The
+                        location is simply breathtaking, nestled between mountains and the sea, offering
+                        unparalleled views from every angle.Feel free to adjust these reviews to better fit the
+                        specific features and experiences your hotel resort offers!"
+                    </p>
+                    <div class="dots">......</div>
+                    <span class="number">02.</span>
+                    <i class="bi bi-quote" id="top-quote"></i>
+                    <i class="bi bi-quote" id="bottom-quote"></i>
+                </div>
+            </div>
+            <!--child end-->
+            <!--Chid3-->
+            <div class="testi-item" data-aos="fade-left" data-aos-duration="1500">
+                <div class="img">
+                    <img src="./images/4.jpg" alt>
+                </div>
+                <div class="testimonials-content">
+                    <h3>Nicolo Sevensky</h3>
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>
+                        "Our family had an amazing time at this resort! The kids loved the children's activities
+                        organized by the friendly and caring staff, giving my husband and me some much-needed
+                        relaxation time. The beach access was convenient, and we enjoyed long walks along the
+                        shore at sunset. "
+                    </p>
+                    <div class="dots">......</div>
+                    <span class="number">03.</span>
+                    <i class="bi bi-quote" id="top-quote"></i>
+                    <i class="bi bi-quote" id="bottom-quote"></i>
+                </div>
+            </div>
+        </div>
+        <!--child end-->
+    </div>
+    </div>
+
+    <!-- contact us -->
+    <!-- banner -->
+    <div id="contact-us-section">
+        <div id="contact-banner">
+            <div class="contact-banner-blur">
+                <h3>Enjoy your time in our Hotel with pleasure.</h3>
+                <h1>Our Contacts </h1>
+                <div class="lines-with-logo">
+                    <div class="lines"></div>
+                    <img src="./images/only-logo.png" alt="logo-image">
+                    <div class="lines"></div>
+                </div>
+            </div>
+        </div>
+        <!-- cards -->
+        <div class="contact-border">
+            <div class="contant-card-parent">
+                <div class="contant-card" data-aos="fade-left" data-aos-duration="3000">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="line"></div>
+                    <div class="contact-text">
+                        <h1>Our Location</h1>
+                        <p>
+                            The Heaven Hotel-Resort is perfectly situated along a tranquil coastline, offering
+                            breathtaking ocean views and lush tropical surroundings. Enjoy easy access to pristine
+                            beaches and vibrant local attractions, all while experiencing the ultimate in luxury and
+                            relaxation.
+                        </p>
+                        <h4>Karachi Sindh</h4>
+
+                    </div>
+                </div>
+                <div class="contant-card" data-aos="flip-left" data-aos-duration="1000">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="line"></div>
+                    <div class="contact-text">
+                        <h1>Our Phone</h1>
+                        <p>
+                            For any inquiries, or any assistance, please call us, our phone number is given below. Our
+                            team at The Heaven Hotel-Resort is available to ensure your stay is exceptional and
+                            unforgettable. We look forward to hearing from you!ٖ
+                        </p>
+                        <div class="num">
+                            <h4>+0123456789</h4>
+                            <h4>+0123456789</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="contant-card" data-aos="flip-left" data-aos-duration="1000">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="line"></div>
+                    <div class="contact-text">
+                        <h1>Our Mail</h1>
+                        <p>
+                            For reservations, inquiries, or any assistance, please reach out to us our Email given
+                            below.
+                            Our team at The Heaven Hotel-Resort is here to ensure your experience is seamless
+                            and enjoyable. We look forward to connecting with you!
+                        </p>
+                        <h4>youremail@gmail.com</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- form -->
+        <div class="contact-parent">
+            <div class="contact-form" data-aos="fade-right" data-aos-duration="1000">
+                <h1>GET IN TOUCH</h1>
+                <form>
+                    <div class="fields">
+                        <div class="name">
+                            <input type="text" placeholder="Your Name" id="name" onkeypress="return onlyAlphabet(event)"
+                                autocomplete="off" oninput="fillInputsFields()">
+                            <div class="name-error">.</div>
+                        </div>
+                        <div class="email">
+                            <input type="email" placeholder="Your Email" id="email" autocomplete="off"
+                                oninput="fillInputsFields()">
+                            <div class="email-error">.</div>
+                        </div>
+                        <div class="msg">
+                            <textarea name="Message" placeholder="Message" id="message" cols="6" rows="8"
+                                autocomplete="off" oninput="fillInputsFields()"></textarea>
+                            <div class="msg-error">.</div>
+                        </div>
+                    </div>
+                    <button id="contact-btn" onclick="checkFoam(event)">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            <div class="contact-location" data-aos="fade-left" data-aos-duration="1000">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d924237.7102832987!2d66.49592655461542!3d25.19298358086938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1721295706365!5m2!1sen!2s"
+                    style="border: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="arrow-design">
+        </div>
+        <div id="footer-parent">
+            <div class="footer-about">
+                <h3>About us</h3>
+                <p>welcome to The Heaven Hotel-Resort, an oasis of luxury.Our resort offers a perfect blend of elegance
+                    and comfort, featuring beautifully appointed rooms and suites designed to provide a serene escape.
+                </p>
+                <a onclick="goToServices()">Read more</a>
+            </div>
+            <div class="footer-contact">
+                <div class="footer-contact">
+                    <h3>Contact info</h3>
+                    <div class="contact-content">
+                        <p>Call : <span>+0123456789, +0123456789</span></p>
+                        <p>Write : <span>TheHeavenResort@gmail.com</span></p>
+                        <p>Find us : <span>PAKISTAN Karachi</span></p>
+                    </div>
+                </div>
+                <a id="get-in-touch" onclick="goToContact()">Get in Touch</a>
+            </div>
+            <div class="footer-links">
+                <h3>Helpful links</h3>
+                <div class="link">
+                    <a onclick="goToRooms()"><i class="fa-solid fa-caret-right"></i><span>ROOMS</span></a>
+                    <a onclick="goToContact()"><i class="fa-solid fa-caret-right"></i><span>CONTACTS</span></a>
+                    <a onclick="goToAbout()"><i class="fa-solid fa-caret-right"></i><span>ABOUT</span></a>
+                    <a onclick="goToTeam()"><i class="fa-solid fa-caret-right"></i><span>TEAM</span></a>
+                    <a href="./All HTML/privacy-policy.html"><i class="fa-solid fa-caret-right"></i><span>PRIVACY
+                            POLICY</span></a>
+                </div>
+            </div>
+            <div class="guest-feedback">
+                <h3>Guest And Feedback</h3>
+                <div class="content">
+                    <p>
+                        Leave a Review: <span>Share your experience and read reviews from other guests.</span>
+                    </p>
+                    <p>
+                        Survey: <span>Help us improve by completing our guest satisfaction survey.</span>
+                    </p>
+                    <p>
+                        Testimonials: <span>Read what others have to say about their stay at The Heaven
+                            Hotel-Resort.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- social media -->
+        <div id="footer-social-parent">
+
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+
+        </div>
+
+        <div id="copyright">
+            <p>© HEAVEN 2024 . ALL RIGHTS RESERVED.</p>
+            <i class="fa-solid fa-angles-up" onclick="goToTop()" id="go-to-top"></i>
+        </div>
+
+    </footer>
+
+
+    <script src="./All JS/home.js"></script>
+    <script src="./global.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            if (window.location.hash) {
+                window.location.href = "./index.html";
+            }
+
+        });
+        let sliderBtnBorder = document.querySelector(".slide .content .for-btn .border");
+        // function sliderBtnHover() {
+        //     sliderBtnBorder.style.padding = "0px";
+        //     sliderBtnBorder.style.border = "1px solid #c4a6764b";
+        //     sliderBtnBorder.style.transition = "0.3s";
+        // }
+        // function sliderBtnLeave() {
+        //     sliderBtnBorder.style.padding = "10px";
+        //     sliderBtnBorder.style.border = "1px solid #bebebe75";
+        //     sliderBtnBorder.style.borderStyle = "dotted";
+        //     sliderBtnBorder.style.transition = "0.3s";
+        // }
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

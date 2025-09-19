@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "name": "garden family room",
+        "description": "Stay in our Garden Family Room with lovely garden views and comfy seating. Enjoy cozy beds, a small kitchen, and a nice bathroom for a perfect family trip.",
+        "long_description": "Our Garden Family Room at The Heaven Hotel-Resort is the perfect haven for families seeking a luxurious yet cozy escape. This spacious room is meticulously designed to provide ample space for parents and children alike, ensuring everyone enjoys their own comfortable corner. Adorned with plush furnishings and soothing earth tones, the room exudes a warm, inviting ambiance that instantly makes you feel at home. Large windows allow natural light to flood in, highlighting the tasteful decor and offering picturesque views of our beautifully landscaped gardens.",
+        "price": 129,
+        "image": "./images/garden-family-room.jpg",
+        "guest": 2,
+        "bed": 1,
+        "bath": 1
+    },
+    {
+        "id": 2,
+        "name": "premium panorama room",
+        "description": "Stay in our Premium Panorama Room with breathtaking views and stylish decor. Enjoy a cozy bed, a modern bathroom, and all the amenities you need for a perfect stay.",
+        "long_description":"The Premium Panorama Room at The Heaven Hotel-Resort is the epitome of luxury and sophistication, offering guests an unparalleled experience. This elegantly appointed room boasts floor-to-ceiling windows that provide stunning, uninterrupted views of the surrounding landscape. Whether it's the tranquil ocean, lush gardens, or majestic mountains, the panoramic vistas promise a visual feast that can be enjoyed from the comfort of your plush bed or private balcony. The room's tasteful decor, featuring contemporary design elements and soothing color palettes, creates a serene atmosphere that is perfect for relaxation.",
+        "price": 230,
+        "image": "./images/premium-panorama-room.avif",
+        "guest": 4,
+        "bed": 2,
+        "bath": 2
+    },
+    {
+        "id": 3,
+        "name": "presidential suite",
+        "description": "Experience luxury in our Presidential Room with elegant decor and top-notch amenities. Enjoy a spacious living area, a plush bed, and a luxurious bathroom for an unforgettable stay.",
+        "long_description": "The Presidential Suite at The Heaven Hotel-Resort represents the ultimate in luxury and sophistication. This expansive suite is exquisitely designed to offer the finest accommodations for our most discerning guests. With a generous layout that includes a separate living area, dining room, and private study, the suite provides ample space for relaxation, work, and entertainment. The décor features opulent furnishings, rich fabrics, and carefully curated art pieces, creating an ambiance of timeless elegance. Floor-to-ceiling windows offer breathtaking views of the surrounding landscape, allowing you to soak in the beauty of your surroundings from every room.",
+        "price": 520,
+        "image": "./images/presidential-room.jpg",
+        "guest": 2,
+        "bed": 3,
+        "bath": 1
+    },
+    {
+        "id": 4,
+        "name": "beach villa room",
+        "description": "Stay in our Beach Villa Room, steps away from the ocean. Enjoy stunning sea views, a private terrace, and all the comforts you need for a perfect beach getaway.",
+        "long_description": "Experience the ultimate beachfront getaway with the Beach Villa Room at The Heaven Hotel-Resort. Nestled right along the pristine shore, this room offers direct access to the beach, allowing you to step out onto soft sands and feel the gentle ocean breeze at any moment. The villa is designed to blend seamlessly with its natural surroundings, featuring large windows and sliding glass doors that bring the beauty of the outside in. With a spacious layout and elegant decor inspired by the coastal landscape, the Beach Villa Room provides a serene and luxurious retreat for those seeking a peaceful escape by the sea.",
+        "price": 320,
+        "image": "./images/beach-villa-room.jpg",
+        "guest": 3,
+        "bed": 2,
+        "bath": 1
+    },
+    {
+        "id": 5,
+        "name": "superior panorama room",
+        "description": "Stay in our Beach Villa Room, steps away from the ocean. Enjoy stunning sea views, a private terrace, and all the comforts you need for a perfect beach getaway.",
+        "long_description": "The Superior Panorama Room at The Heaven Hotel-Resort offers a blend of elegance and comfort, perfect for guests seeking a luxurious retreat with breathtaking views. This well-appointed room features floor-to-ceiling windows that showcase stunning panoramic vistas of the surrounding landscape, whether it's the azure ocean, verdant gardens, or majestic mountains. The stylish decor, with its contemporary design elements and calming color palette, creates an inviting and serene atmosphere, making it an ideal space for relaxation and rejuvenation.",
+        "price": 800,
+        "image": "./images/superior-panorama-room-img.jpg",
+        "guest": 3,
+        "bed": 2,
+        "bath": 1
+    },
+    {
+        "id": 6,
+        "name": "Comfort room",
+        "description": "Stay in our Beach Villa Room, steps away from the ocean. Enjoy stunning sea views, a private terrace, and all the comforts you need for a perfect beach getaway.",
+        "long_description": "The Comfort Room at The Heaven Hotel-Resort is designed to offer a cozy and inviting retreat for guests seeking a tranquil escape. With its warm and welcoming ambiance, this room provides the perfect setting for relaxation and rejuvenation. The tasteful decor features soft color palettes and elegant furnishings, creating a serene atmosphere that feels like a home away from home. Large windows allow natural light to fill the space, enhancing the overall sense of comfort and tranquility.",
+        "price": 115,
+        "image": "./images/comfort-room-img.jpg",
+        "guest": 1,
+        "bed": 1,
+        "bath": 1
+    },
+    {
+        "id": 7,
+        "name": "Oceanfront Suite",
+        "description": "Immerse yourself in stunning ocean views from this elegant suite. Experience the beauty of the ocean from your room.",
+        "long_description": "The Oceanfront Suite at The Heaven Hotel-Resort offers an unparalleled combination of luxury and natural beauty. This exquisite suite is situated directly on the water's edge, providing guests with breathtaking, unobstructed views of the ocean. Floor-to-ceiling windows and a private balcony ensure that you can fully immerse yourself in the stunning coastal scenery from the comfort of your room. The suite's elegant decor, featuring a blend of contemporary and coastal design elements, creates a sophisticated yet relaxed ambiance, perfect for a memorable seaside escape.",
+        "price": 280,
+        "image": "./images/ocean-front-suite-img.jpg",
+        "guest": 2,
+        "bed": 1,
+        "bath": 1
+    },
+    {
+        "id": 8,
+        "name": "sunrise suite",
+        "description": "Start your day with breathtaking sunrise views in a luxurious setting.Features a king-size bed and elegant furnishings.",
+        "long_description": "The Sunrise Suite at The Heaven Hotel-Resort is a haven of luxury and tranquility, perfectly positioned to offer breathtaking views of the sunrise. This spacious suite is designed to provide a serene and elegant retreat, featuring floor-to-ceiling windows that flood the room with natural light and allow guests to witness the first rays of dawn from the comfort of their bed or private balcony. The tasteful decor, blending modern sophistication with cozy touches, creates a warm and inviting atmosphere, making it an ideal choice for those seeking a peaceful and rejuvenating escape.",
+        "price": 370,
+        "image": "./images/sunrise-suite-room-img.jpg",
+        "guest": 3,
+        "bed": 2,
+        "bath": 2
+    },
+    {
+        "id": 9,
+        "name": "Island Escape Room",
+        "description": "A secluded hideaway with island-inspired decor and amenities.Escape to your own island paradise in this room.",
+        "long_description": "The Island Escape Room at The Heaven Hotel-Resort offers a serene retreat amidst lush tropical surroundings. Perfect for those looking to disconnect from the hustle and bustle of everyday life, this room is designed to immerse guests in the natural beauty of the island. The decor features earthy tones and natural materials, creating a warm and inviting atmosphere that reflects the island's charm. Large windows and a private balcony provide stunning views of the tropical gardens, allowing you to enjoy the tranquil scenery and the soothing sounds of nature from the comfort of your room.",
+        "price": 510,
+        "image": "./images/island-escape-room-img.jpg",
+        "guest": 1,
+        "bed": 3,
+        "bath": 1
+    },
+    {
+        "id": 10,
+        "name": "luxury soft",
+        "description": "A chic and stylish loft with premium amenities and stunning views.Ideal for a luxurious and comfortable stay.",
+        "long_description": "The Luxury Soft Room at The Heaven Hotel-Resort is a sanctuary of elegance and comfort, designed to provide guests with a relaxing and indulgent experience. This well-appointed room features a sophisticated decor with soft, soothing colors and plush furnishings, creating an ambiance of refined tranquility. Large windows allow natural light to illuminate the space, highlighting the room's tasteful design and offering picturesque views of the resort's lush surroundings. Whether you're here for a romantic getaway or a peaceful retreat, the Luxury Soft Room provides the perfect setting for relaxation and rejuvenation.",
+        "price":480,
+        "image": "./images/luxury-soft-room-img.jpg",
+        "guest": 2,
+        "bed": 3,
+        "bath": 1
+    }
+]

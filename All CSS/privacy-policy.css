@@ -1,0 +1,150 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+#banner {
+    position: relative;
+    height: 100vh;
+    padding: 0px 40px;
+
+    .banner-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            filter: brightness(.5);
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+            gap: 20px;
+
+            h1 {
+                font-size: 2.5em;
+                color: #fff;
+                font-weight: 400;
+                text-align: center;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 5px #22222256;
+            }
+
+            p {
+                color: #c4a676;
+                font-weight: 550;
+                font-style: italic;
+                font-size: 1em;
+                text-shadow: 1px 1px 2px #22222256;
+            }
+
+            .lines-with-logo {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+
+                img {
+                    width: 40px;
+                    filter: drop-shadow(1px 2px 5px #222);
+                }
+
+                .left-line,
+                .right-line {
+                    width: 100px;
+                    height: 2px;
+                    background-color: #d6d6d6a2;
+                }
+            }
+
+        }
+    }
+
+    .animated-dot {
+        position: absolute;
+        bottom: 30px;
+        left: 49.4%;
+        border: 1px solid #ffffffb4;
+        width: 21px;
+        height: 21px;
+        padding: 7px 0px;
+        border-radius: 6px;
+        z-index: 100;
+
+        .dot {
+            position: absolute;
+            top: 7px;
+            left: 9px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #c4a676;
+            animation: go-down 1.5s linear infinite;
+        }
+    }
+}
+
+@keyframes go-down {
+    to {
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #banner{
+        display: flex;
+        flex-direction: column;
+        padding: 0px 0px;
+    }
+}
+
+section{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-top: 1px solid #ebebebbd;
+    span{
+        padding: 20px;
+        background-color: #272535;
+        color: #c4a676;
+        text-align: center;
+        font-size: 1.5em;
+        font-family: "jost";
+        text-transform: capitalize;
+    }
+    .content{
+        border-top: 1px solid #ebebebbd;
+        margin-top: 20px;
+        padding: 10px 40px;
+        h1{
+            font-family: "PLayfair Display";
+            font-weight: 500;
+            color: #222;
+            text-decoration: underline;
+        }
+        p{
+            font-family: "jost";
+            color: #222;
+            font-size: 1.2em;
+        }
+        li{
+            font-family: "jost";
+            color: #222;
+            font-size: 1.2em;    
+        }
+    }
+}

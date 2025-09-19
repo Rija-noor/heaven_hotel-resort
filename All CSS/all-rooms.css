@@ -1,0 +1,410 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+#banner {
+    position: relative;
+    height: 100vh;
+    padding: 0px 40px;
+
+    .banner-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            filter: brightness(.5);
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70%;
+            gap: 20px;
+
+            h1 {
+                font-size: 2.5em;
+                color: #fff;
+                font-weight: 400;
+                text-align: center;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 5px #22222256;
+            }
+
+            p {
+                color: #c4a676;
+                font-weight: 550;
+                font-style: italic;
+                font-size: 1em;
+                text-shadow: 1px 1px 2px #22222256;
+            }
+
+            .lines-with-logo {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+
+                img {
+                    width: 40px;
+                    filter: drop-shadow(1px 2px 5px #222);
+                }
+
+                .left-line,
+                .right-line {
+                    width: 100px;
+                    height: 2px;
+                    background-color: #d6d6d6a2;
+                }
+            }
+
+        }
+    }
+
+    .animated-dot {
+        position: absolute;
+        bottom: 30px;
+        left: 49.4%;
+        border: 1px solid #ffffffb4;
+        width: 21px;
+        height: 21px;
+        padding: 7px 0px;
+        border-radius: 6px;
+        z-index: 100;
+
+        .dot {
+            position: absolute;
+            top: 7px;
+            left: 9px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #c4a676;
+            animation: move-down 1.5s linear infinite;
+        }
+    }
+}
+
+@keyframes move-down {
+    to {
+        top: 30px;
+        opacity: 0;
+    }
+}
+
+/* for banner */
+@media screen and (max-width: 1024px) {
+    #banner {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+}
+
+
+#all-rooms-section {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px 40px;
+
+    button {
+        width: 200px;
+        padding: 15px 20px;
+        background-color: #272535;
+        color: #c4a676;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: "jost";
+        font-weight: 600;
+        transition: .2s;
+
+        &:hover {
+            color: #272535;
+            background-color: #c4a676;
+        }
+    }
+
+    .all-rooms {
+        border: 1px solid #e6e4e49d;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        justify-content: center;
+        row-gap: 40px;
+        column-gap: 20px;
+        padding: 20px 0px;
+        border-radius: 20px;
+
+        .each-room {
+            border: 1px solid #e6e4e49d;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px #e6e4e48e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .image {
+                position: relative;
+                width: 100%;
+                height: 50%;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    transition: .3s;
+
+                    &:hover {
+                        filter: brightness(0.5);
+                        object-fit: fill;
+                    }
+                }
+
+                .msg {
+                    width: 100px;
+                    padding: 10px;
+                    text-align: center;
+                    border-radius: 5px;
+                    color: #c4a676;
+                    text-transform: capitalize;
+                    position: absolute;
+                    bottom: 25px;
+                    left: 90px;
+                    background-color: #fff;
+                    box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.2);
+                    transform: translateY(25px);
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all ease .3s;
+                }
+
+                button {
+                    position: absolute;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #fff;
+                    border: none;
+                    border-radius: 50%;
+                    color: #c4a676;
+                    cursor: pointer;
+                    transition: .2s;
+                    box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.2);
+
+                    &:hover {
+                        background-color: #272535;
+                        box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.2);
+                    }
+                }
+
+                .view-image {
+                    top: 20px;
+                    right: 20px;
+                    transform: translateX(40px);
+                    visibility: hidden;
+                }
+
+                .whishlist-btn {
+                    bottom: 20px;
+                    left: 20px;
+                }
+            }
+
+            .each-room-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 10px;
+                height: 50%;
+
+                h1 {
+                    font-family: "Playfair Display";
+                    text-transform: capitalize;
+                    color: #323246;
+                    font-weight: 500;
+                    font-size: 1.3em;
+                }
+
+                p {
+                    font-family: "jost";
+                    color: #222;
+                    margin-top: -2px;
+                    font-size: 0.9em;
+                }
+
+                .about-room {
+                    margin-top: 40px;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    border-top: 1px solid #e6e4e49d;
+                    border-bottom: 1px solid #e6e4e49d;
+                    height: 50px;
+
+                    .for-guest,
+                    .for-bed,
+                    .for-bath {
+                        gap: 10px;
+                        display: flex;
+                        align-items: center;
+
+                        i {
+                            color: #c4a676;
+                        }
+
+                        span {
+                            text-transform: capitalize;
+                            color: #222;
+                            font-family: "jost";
+                        }
+
+                        @media screen and (max-width: 768px) {
+                            span {
+                                font-size: 1.1em;
+                            }
+                        }
+
+                        @media screen and (max-width: 500px) {
+                            span {
+                                font-size: 1em;
+                            }
+                        }
+                    }
+
+
+                }
+
+                .price-and-link {
+                    margin-top: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    h3 {
+                        text-transform: capitalize;
+                        color: #c4a676;
+                        font-family: "Playfair Display";
+                    }
+
+                    button {
+                        background-color: transparent;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: #222;
+                        font-family: "jost";
+                        border: 1px solid #e6e4e4;
+                        width: 160px;
+                        border-radius: 5px;
+                        font-size: 0.7em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        font-weight: 600;
+
+                        &:hover {
+                            background-color: #323246;
+                            color: #c4a676;
+                        }
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        h3 {
+                            font-size: 1.5em;
+                        }
+
+                        button {
+                            width: 200px;
+                            font-size: .8em;
+                        }
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        h3 {
+                            font-size: 1em;
+                        }
+
+                        button {
+                            width: 150px;
+                            font-size: .7em;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    h1 {
+                        font-size: 1.5em;
+                    }
+
+                    p {
+                        font-size: 1.1em;
+                    }
+
+                    .about-room {
+                        justify-content: space-around;
+                    }
+
+                    i {
+                        font-size: 1.1em;
+                    }
+
+                    .price-and-link {
+                        margin-top: 30px;
+                    }
+                }
+
+                @media screen and (max-width: 500px) {
+                    h1 {
+                        font-size: 1em;
+                    }
+
+                    p {
+                        font-size: .8em;
+                    }
+
+                    .about-room {
+                        justify-content: flex-start;
+                        gap: 15px;
+                    }
+
+                    i {
+                        font-size: 1em;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .all-rooms {
+            grid-template-columns: 50% 50%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .all-rooms {
+            grid-template-columns: 100%;
+        }
+    }
+
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heaven - Hotel & Resort Booking</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="../All CSS/room-detail.css">
+    <link rel="icon" href="../images/only-logo.png">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- for jost font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- for playfair font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="scroll-watcher"></div>
+    <div id="shade"></div>
+    <div class="view-big-image">
+        <i class="fa-solid fa-xmark" onclick="closeTrailer()"></i>
+        <img class="big-image">
+    </div>
+    <div id="wishlist-add-msg">
+        <div class="left-design"></div>
+        <i class="fa-regular fa-face-smile-beam"></i>
+        <p>Add in Wishlist!</p>
+    </div>
+    <div id="wishlist-remove-msg">
+        <div class="left-design"></div>
+        <i class="fa-regular fa-face-frown"></i>
+        <p>Remove From Wishlist!</p>
+    </div>
+    <div id="logout-msg">
+        <p>Are You Sure?</p>
+        <div id="btns">
+            <button id="no-btn">No</button>
+            <button id="yes-btn">Yes</button>
+        </div>
+    </div>
+
+    <div id="banner">
+        <div class="animated-dot">
+            <div class="dot"></div>
+        </div>
+        <div id="top">
+            <div class="top-content">
+                <div id="left">
+                    <div class="phone-and-location">
+                        <p>Call: </p><span>+9876543210</span>
+                        <p>Find Us: </p><span>Pakistan Karachi</span>
+                    </div>
+                    <div class="icon-links">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="user">
+                        <img src="../images/no-img2.jpg" alt="profile-pic" id="profile">
+                        <p id="username"></p>
+                    </div>
+                    <div class="link">
+                        <a href="/All HTML/login-page.html" id="login-link">Login</a>
+                        <a href="#" id="logout-link">Logout </a>
+                        <a href="/All HTML/signup-page.html" id="signup-link">Signup</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="left">
+                <img src="../images/logo.png" alt="logo">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a onclick="goToAbout(this)">About</a></li>
+                    <li><a onclick="goToServices()">Services</a></li>
+                    <li><a onclick="goToRooms()">Rooms</a></li>
+                    <li><a onclick="goToTeam()">Team</a></li>
+                    <li><a onclick="goToTestimonials()">Testimonials</a></li>
+                    <li><a onclick="goToContact()">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div id="icons">
+                    <div id="sideNav-icon">
+                        <i class="fa-solid fa-bars-staggered" onclick="openSideNav()"></i>
+                    </div>
+                    <div class="whishlist" onclick="openWishlist()">
+                        <i class="fa-solid fa-bag-shopping" onclick="openWishlist()"></i>
+                        <p id="whishlist-count">0</p>
+                    </div>
+                </div>
+                <button onclick="goToRooms()">Rooms</button>
+            </div>
+        </nav>
+        <div id="sideNavbar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a onclick="goToAbout()">About</a></li>
+                <li><a onclick="goToServices()">Services</a></li>
+                <li><a onclick="goToRooms()">Rooms</a></li>
+                <li><a onclick="goToTeam()">Team</a></li>
+                <li><a onclick="goToTestimonials()">Testimonials</a></li>
+                <li><a onclick="goToContact()">Contacts</a></li>
+            </ul>
+            <i class="fa-solid fa-xmark" onclick="closeSideNav()"></i>
+        </div>
+        <div id="wishlist">
+            <div class="top-content">
+                <h2 id="wishlist-empty-msg">Your wishlist</h2>
+                <i class="fa-solid fa-xmark" onclick="closeWishlist()"></i>
+            </div>
+            <div class="main-content-rooms">
+
+            </div>
+            <button class="clear-wishlist">Clear wishlist</button>
+        </div>
+    </div>
+
+    <section>
+        <div id="room-detail">
+
+        </div>
+    </section>
+
+    <div id="similar-room-section">
+        <div class="top">
+            <h2>similar Rooms</h2>
+            <img src="../images/only-logo.png" alt="logo-image">
+        </div>
+        <div class="rooms">
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="arrow-design">
+        </div>
+        <div id="footer-parent">
+            <div class="footer-about">
+                <h3>About us</h3>
+                <p>welcome to The Heaven Hotel-Resort, an oasis of luxury.Our resort offers a perfect blend of elegance
+                    and comfort, featuring beautifully appointed rooms and suites designed to provide a serene escape.
+                </p>
+                <a onclick="goToServices()">Read more</a>
+            </div>
+            <div class="footer-contact">
+                <div class="footer-contact">
+                    <h3>Contact info</h3>
+                    <div class="contact-content">
+                        <p>Call : <span>+0123456789, +0123456789</span></p>
+                        <p>Write : <span>TheHeavenResort@gmail.com</span></p>
+                        <p>Find us : <span>PAKISTAN Karachi</span></p>
+                    </div>
+                </div>
+                <a id="get-in-touch" onclick="goToContact()">Get in Touch</a>
+            </div>
+            <div class="footer-links">
+                <h3>Helpful links</h3>
+                <div class="link">
+                    <a onclick="goToRooms()"><i class="fa-solid fa-caret-right"></i><span>ROOMS</span></a>
+                    <a onclick="goToContact()"><i class="fa-solid fa-caret-right"></i><span>CONTACTS</span></a>
+                    <a onclick="goToAbout()"><i class="fa-solid fa-caret-right"></i><span>ABOUT</span></a>
+                    <a onclick="goToTeam()"><i class="fa-solid fa-caret-right"></i><span>TEAM</span></a>
+                    <a href="../All HTML/privacy-policy.html"><i class="fa-solid fa-caret-right"></i><span>PRIVACY
+                            POLICY</span></a>
+                </div>
+            </div>
+            <div class="guest-feedback">
+                <h3>Guest And Feedback</h3>
+                <div class="content">
+                    <p>
+                        Leave a Review: <span>Share your experience and read reviews from other guests.</span>
+                    </p>
+                    <p>
+                        Survey: <span>Help us improve by completing our guest satisfaction survey.</span>
+                    </p>
+                    <p>
+                        Testimonials: <span>Read what others have to say about their stay at The Heaven
+                            Hotel-Resort.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- social media -->
+        <div id="footer-social-parent">
+
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+
+        </div>
+
+        <div id="copyright">
+            <p>© HEAVEN 2024 . ALL RIGHTS RESERVED.</p>
+            <i class="fa-solid fa-angles-up" onclick="goToTop()" id="go-to-top"></i>
+        </div>
+
+    </footer>
+
+    <script src="../All JS/room-detail.js"></script>
+    <script src="../global.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
